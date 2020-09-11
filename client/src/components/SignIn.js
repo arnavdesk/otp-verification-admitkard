@@ -5,6 +5,27 @@ import "react-phone-input-2/lib/material.css";
 import "../assets/css/sign-in.css";
 
 class SignIn extends Component {
+  constructor() {
+    super();
+    this.state = { phone: 0 };
+  }
+
+  generateOTP = async () => {
+    console.log(this.state.phone);
+    const response = await fetch("http://localhost:8000/api/v1/otp/generate", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ phone: this.state.phone }),
+    });
+    const data = await response.json();
+
+    console.log(data);
+
+    this.props.setNotificationUpdate(data.data.otp);
+  };
+
   render() {
     return (
       <div className="app-body">
@@ -19,13 +40,17 @@ class SignIn extends Component {
             country={"in"}
             inputStyle={styles.inputStyle}
             containerStyle={styles.containerStyle}
+            value={this.state.phone}
+            onChange={(phone) => this.setState({ phone })}
           />
         </div>
         <p className="extra-info">
           We will send you a one time SMS message. Charges may apply.
         </p>
 
-        <button className="submit-button">Sign In with OTP</button>
+        <button onClick={this.generateOTP} className="submit-button">
+          Sign In with OTP
+        </button>
       </div>
     );
   }
