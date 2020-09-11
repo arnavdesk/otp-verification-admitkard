@@ -1,0 +1,56 @@
+.art-image {
+  margin-top: 91px;
+  margin-left: -10px;
+}
+
+.heading {
+  margin-top: 47px;
+
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 28px;
+
+  color: #333333;
+}
+
+.description {
+  margin-top: 25px;
+
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+
+  color: #999999;
+}
+
+.description span {
+  color: #333333;
+}
+
+.submit-button {
+  margin-top: 80px;
+
+  width: 141px;
+  height: 36px;
+  padding: 5px;
+
+  background: #f7b348;
+  border-radius: 100px;
+  border: none;
+
+  color: white;
+
+  font-family: Work Sans;
+  font-size: 0.58em;
+  font-weight: 700;
+}
+
+.submit-info {
+  margin: 0px;
+  margin-top: 8px;
+  font-size: 12px;
+  color: #999999;
+}

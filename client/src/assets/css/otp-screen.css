@@ -1,0 +1,82 @@
+.hand-img {
+  margin-top: 97px;
+}
+
+.heading {
+  margin: 0px;
+  margin-top: 48px;
+
+  font-family: Work Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 23px;
+  text-align: center;
+
+  color: #333333;
+}
+
+.number-info {
+  margin: 0px;
+  margin-top: 40px;
+
+  font-family: Work Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+
+  color: #666666;
+}
+
+.number-info span {
+  font-style: normal;
+  font-weight: normal;
+  color: black;
+}
+
+.change-number-link {
+  margin-top: 9px;
+
+  font-family: Work Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+
+  color: #f7b348;
+  border-bottom: 1px solid #f7b348;
+}
+
+.resend-link {
+  margin: 0px;
+  margin-top: 88px;
+
+  font-family: Work Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+
+  color: #999999;
+}
+
+.resend-link a {
+  color: #f7b348;
+}
+
+.submit-button {
+  width: 224px;
+  height: 36px;
+
+  background: #f7b348;
+  border-radius: 100px;
+  border: none;
+  margin-top: 28px;
+
+  color: white;
+
+  font-family: Work Sans;
+  font-size: 0.67em;
+}

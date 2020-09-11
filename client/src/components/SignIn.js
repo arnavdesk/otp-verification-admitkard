@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import applogo from "../assets/img/AK_logo.png";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/material.css";
+import "../assets/css/sign-in.css";
 
 class SignIn extends Component {
   render() {
