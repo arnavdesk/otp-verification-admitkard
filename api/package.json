@@ -14,7 +14,10 @@
   "author": "arnavdesk",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.1",
-    "mongoose": "^5.10.4"
+    "mongoose": "^5.10.4",
+    "random-number": "0.0.9",
+    "unirest": "^0.6.0"
   }
 }
