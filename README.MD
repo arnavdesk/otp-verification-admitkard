@@ -2,7 +2,7 @@
 
 ## Demo of the project at : https://youtu.be/tjmM_GFxGr0
 
-## How To Install/Run on your local directory.
+## How To Install/Run on your local directory?
 
 1. Clone this project
 2. Start by installing NodeJS and MongoDB on your PC if you don't have it already.
