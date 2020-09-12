@@ -5,7 +5,7 @@
 ## How To Install/Run on your local directory.
 
 1. Clone this project
-2. Start by installing npm and MongoDB on your PC if you don't have it already.
+2. Start by installing NodeJS and MongoDB on your PC if you don't have it already.
 3. Navigate to Project Directory by :
 
 ```
@@ -48,6 +48,8 @@ npm start or react-scripts start
 3. Enter the OTP and you will be validated.
 
 ## Preview
+
+<img src="/assets/home.png" width="330px" height="700px"> <img src="/assets/otp.png" width="330px" height="700px"> <img src="/assets/success.png" width="330px" height="700px">
 
 ## Directory Structure
 
