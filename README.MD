@@ -17,7 +17,7 @@ cd otp-verification-admitkard
 ```
 cd api
 npm install
-npm start or nodemon index.js or node index.js
+npm start or node index.js
 ```
 
 5. API will start on port 8000
