@@ -20,7 +20,8 @@ npm install
 npm start or nodemon index.js or node index.js
 ```
 
--> API will start on port 8000 5. To run client/frontend navigate to the following directory by :
+5. API will start on port 8000
+6. To run client/frontend navigate to the following directory by :
 
 ```
 cd .. // To go back to project directory
@@ -28,6 +29,8 @@ cd client
 npm install
 npm start or react-scripts start
 ```
+
+7. Front end will run on port 3000
 
 ## Basic Features:
 
