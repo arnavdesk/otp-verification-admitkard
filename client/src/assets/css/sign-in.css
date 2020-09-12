@@ -1,20 +1,20 @@
+/* Sign in screens styles */
 .app-logo {
-  /* position: absolute; */
   width: 264px;
   height: 50px;
-  /* left: calc(50% - 264px / 2 - 0.5px);
-    top: calc(50% - 50px / 2 - 225px); */
   margin-top: 150px;
 }
 
 .heading {
   margin-top: 111px;
   margin-bottom: 0px;
+
   font-weight: 500;
 }
 
 .description {
   margin-top: 20px;
+
   color: gray;
   font-size: 0.67em;
 }
@@ -52,4 +52,13 @@
 
   font-family: Work Sans;
   font-size: 0.67em;
+}
+
+@media screen and (max-width: 365px) {
+  .phone-input-container {
+    width: 300px !important;
+  }
+  .phone-input {
+    width: 300px !important;
+  }
 }

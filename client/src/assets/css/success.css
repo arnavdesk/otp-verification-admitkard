@@ -1,3 +1,4 @@
+/* Styles for success page */
 .art-image {
   margin-top: 91px;
   margin-left: -10px;
@@ -51,6 +52,7 @@
 .submit-info {
   margin: 0px;
   margin-top: 8px;
+
   font-size: 12px;
   color: #999999;
 }

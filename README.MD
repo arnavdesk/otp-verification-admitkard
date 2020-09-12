@@ -43,8 +43,8 @@ npm start or react-scripts start
 
 ## How to Use/Control?
 
-1. First enter a 10 digit correct number. For receiving SMS on mobile via Fast2SMS(between 9AM-9PM) please us an Indian mobile number.(Try adding less than 10 digit numbers).
-2. Receive an OTP on mobile and on APP screen, enter that OTP. (Try adding wrong OTPs or Incomplete ones).
+1. First enter a 10 digit correct number. For receiving SMS on mobile via Fast2SMS(between 9AM-9PM) please use an Indian mobile number.(Try adding less than 10 digit numbers for Error handling).
+2. Receive an OTP on mobile and on APP screen, enter that OTP. (Try adding wrong OTPs or Incomplete ones for Error handling).
 3. Enter the OTP and you will be validated.
 
 ## Preview

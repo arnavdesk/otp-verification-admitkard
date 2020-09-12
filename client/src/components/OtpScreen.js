@@ -15,11 +15,12 @@ class OtpScreen extends Component {
   }
 
   componentDidMount = () => {
-    if (this.props.phone == 0) {
-      this.props.history.push("/");
+    if (this.props.phone === 0) {
+      this.props.history.replace("/");
     }
   };
 
+  // (Resend) Generate OTP from serverand get response from backend
   generateOTP = async () => {
     console.log(this.props.phone);
     const response = await fetch("http://localhost:8000/api/v1/otp/generate", {
@@ -34,6 +35,7 @@ class OtpScreen extends Component {
     this.props.setNotificationUpdate(data.data.otp, this.props.phone);
   };
 
+  // Verify OTP from backend and show appropriate notification
   verifyOTP = async () => {
     if (this.state.otp.length !== 4) {
       showNotificationError("OTP incorrect");
@@ -49,39 +51,32 @@ class OtpScreen extends Component {
     });
     const data = await response.json();
     console.log(data);
-    if (data.status == 200) {
+    if (data.status === 200) {
       showNotificationSuccess("Successfully verified!! Welocome!");
-      this.props.history.push("/success");
+      this.props.setLoggedIn();
+      this.props.history.replace("/success");
     } else {
       showNotificationError("Could not verify! Please retry or resend OTP");
     }
   };
 
   handleChange = (otp) => this.setState({ otp });
-
-  handleEnterKey = (e) => {
-    console.log(e);
-    if (e.keyCode == 13) {
-      this.verifyOTP();
-    }
-  };
-
   render() {
     return (
       <div className="app-body">
-        <img className="hand-img" src={handImg}></img>
+        <img className="hand-img" src={handImg} alt="otp-art"></img>
         <h4 className="heading">Please verify Mobile number</h4>
         <p className="number-info">
           An OTP is sent to <span>+{this.props.phone}</span>
         </p>
-        <a
+        <p
           onClick={() => {
-            this.props.history.push("/");
+            this.props.history.replace("/");
           }}
           className="change-number-link"
         >
           Change Phone Number
-        </a>
+        </p>
         <OtpInput
           value={this.state.otp}
           onChange={this.handleChange}
@@ -103,9 +98,8 @@ class OtpScreen extends Component {
         />
         <p className="resend-link">
           Didn't receive the code? &nbsp;{" "}
-          <a onClick={this.generateOTP}>Resend</a>
+          <span onClick={this.generateOTP}>Resend</span>
         </p>
-
         <button className="submit-button" onClick={this.verifyOTP}>
           Verify
         </button>

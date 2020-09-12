@@ -2,7 +2,6 @@
 const mongoose = require("mongoose");
 
 // create schema
-
 const otpSchema = mongoose.Schema(
   {
     phone: {

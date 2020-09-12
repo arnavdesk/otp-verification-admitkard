@@ -12,6 +12,7 @@ class SignIn extends Component {
     this.state = { phone: 0 };
   }
 
+  // Generate OTP from backend
   generateOTP = async () => {
     if (this.state.phone.length !== 12) {
       showNotificationError("Incorrect Phone Number!");
@@ -32,9 +33,14 @@ class SignIn extends Component {
 
     this.props.setNotificationUpdate(data.data.otp, this.state.phone);
 
-    this.props.history.push("/otp");
+    if (data.status === 200) {
+      this.props.history.push("/otp");
+    } else {
+      showNotificationError("Error in Notification generation");
+    }
   };
 
+  // Sign in page
   render() {
     return (
       <div className="app-body">
@@ -49,6 +55,8 @@ class SignIn extends Component {
             country={"in"}
             inputStyle={styles.inputStyle}
             containerStyle={styles.containerStyle}
+            containerClass="phone-input-container"
+            inputClass="phone-input"
             value={this.state.phone}
             onChange={(phone) => this.setState({ phone })}
             onEnterKeyPress={this.generateOTP}
@@ -66,6 +74,7 @@ class SignIn extends Component {
   }
 }
 
+// Styles for input bar and container bar required by react-phone-input-2
 const styles = {
   inputStyle: {
     padding: "10px 50px",

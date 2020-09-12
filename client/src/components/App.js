@@ -14,13 +14,22 @@ class App extends Component {
       raiseNoty: false,
       otp: 0,
       mobileNumber: 0,
+      isLoggedIn: false,
     };
   }
 
+  // Set loggedin as true
+
+  setLoggedIn = () => {
+    this.setState({ isLoggedIn: true });
+  };
+
+  // To set notifications
   setNotificationUpdate = (otp, mobileNumber) => {
     this.setState({ otp: otp, raiseNoty: true, mobileNumber: mobileNumber });
   };
 
+  // show notification
   componentDidUpdate = () => {
     if (this.state.raiseNoty === true) {
       showNotification("Your OTP is " + this.state.otp);
@@ -28,6 +37,7 @@ class App extends Component {
     }
   };
 
+  // Use react router
   render() {
     return (
       <Router>
@@ -51,10 +61,16 @@ class App extends Component {
               otp={this.state.otp}
               phone={this.state.mobileNumber}
               setNotificationUpdate={this.setNotificationUpdate}
+              setLoggedIn={this.setLoggedIn}
             />
           )}
         />
-        <Route path="/success" render={(props) => <Success {...props} />} />
+        <Route
+          path="/success"
+          render={(props) => (
+            <Success {...props} isLoggedIn={this.state.isLoggedIn} />
+          )}
+        />
       </Router>
     );
   }

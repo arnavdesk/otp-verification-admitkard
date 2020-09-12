@@ -2,6 +2,7 @@ const Otp = require("../../models/otp");
 const unirest = require("unirest");
 const rn = require("random-number");
 
+// Send OTP to mobile phone
 const sendOTP = (otp, phoneNo) => {
   // Promotional API Fast2SMS
   // Will only be send till 9AM - 9PM because of TRAI rules.
@@ -27,6 +28,7 @@ const sendOTP = (otp, phoneNo) => {
   });
 };
 
+// Generate a random OTP store in DB and send response to client.
 module.exports.generate = async function (request, response) {
   const gen = rn.generator({
     min: 1000,
@@ -71,6 +73,7 @@ module.exports.generate = async function (request, response) {
   }
 };
 
+// verify  OTP stored in DB and send response to client.
 module.exports.verify = async function (request, response) {
   let otp = await Otp.findOne({ phone: request.body.phone });
 

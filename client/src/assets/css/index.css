@@ -1,14 +1,19 @@
+/* global styles */
 body {
   margin: 0;
-  font-family: Work Sans;
+  height: 100vh;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+
+  font-family: Work Sans;
   font-size: 24px;
-  background-color: whitesmoke;
+
+  background-color: #1c1e21;
 }
 
 * {
@@ -23,10 +28,17 @@ code {
 .app-body {
   width: 375px;
   height: 812px;
+  max-width: 375px;
 
   background-color: white;
 
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+@media screen and (max-width: 350px) {
+  .app-body {
+    width: 100vw;
+  }
 }
