@@ -1,6 +1,6 @@
-# OTP-VERIFICATION
+# Otp-Verification-AdmitKard-Assignment
 
-## Demo of the project at : https://youtu.be/tjmM_GFxGr0
+## Demo of the project and explanation at : https://youtu.be/tjmM_GFxGr0
 
 ## How To Install/Run on your local directory?
 
