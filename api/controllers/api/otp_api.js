@@ -2,7 +2,7 @@ const Otp = require("../../models/otp");
 const unirest = require("unirest");
 const rn = require("random-number");
 
-const sendOTP = (otp) => {
+const sendOTP = (otp, phoneNo) => {
   // Promotional API Fast2SMS
   // Will only be send till 9AM - 9PM because of TRAI rules.
   var req = unirest("POST", "https://www.fast2sms.com/dev/bulk");
@@ -17,7 +17,7 @@ const sendOTP = (otp) => {
     message: "Your OTP is " + otp,
     language: "english",
     route: "p",
-    numbers: "7042881200",
+    numbers: phoneNo,
   });
 
   req.end(function (res) {
@@ -35,7 +35,7 @@ module.exports.generate = async function (request, response) {
   request.body.valid = true;
   request.body.otp = gen();
 
-  // sendOTP(request.body.otp);
+  sendOTP(request.body.otp, request.body.phone);
 
   try {
     let oldOtp = await Otp.findOne({ phone: request.body.phone });
