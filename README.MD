@@ -49,7 +49,7 @@ npm start or react-scripts start
 
 ## Preview
 
-<img src="/assets/home.png" width="330px" height="700px"> <img src="/assets/otp.png" width="330px" height="700px"> <img src="/assets/success.png" width="330px" height="700px">
+<img src="/github-assets/home.png" width="330px" height="700px"> <img src="/github-assets/otp.png" width="330px" height="700px"> <img src="/github-assets/success.png" width="330px" height="700px">
 
 ## Directory Structure
 
