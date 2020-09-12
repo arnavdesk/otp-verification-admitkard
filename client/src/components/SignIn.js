@@ -3,6 +3,8 @@ import applogo from "../assets/img/AK_logo.png";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/material.css";
 import "../assets/css/sign-in.css";
+import { withRouter } from "react-router-dom";
+import { showNotificationError } from "../config/notification";
 
 class SignIn extends Component {
   constructor() {
@@ -11,6 +13,11 @@ class SignIn extends Component {
   }
 
   generateOTP = async () => {
+    if (this.state.phone.length !== 12) {
+      showNotificationError("Incorrect Phone Number!");
+      return;
+    }
+
     console.log(this.state.phone);
     const response = await fetch("http://localhost:8000/api/v1/otp/generate", {
       method: "POST",
@@ -23,7 +30,9 @@ class SignIn extends Component {
 
     console.log(data);
 
-    this.props.setNotificationUpdate(data.data.otp);
+    this.props.setNotificationUpdate(data.data.otp, this.state.phone);
+
+    this.props.history.push("/otp");
   };
 
   render() {
@@ -34,7 +43,7 @@ class SignIn extends Component {
         <p className="description">Please sign in to your account</p>
         <div className="phone-input-container">
           <PhoneInput
-            countryCodeEditable={true}
+            countryCodeEditable={false}
             specialLabel="Enter Contact Number"
             placeholder="Phone Number"
             country={"in"}
@@ -42,6 +51,7 @@ class SignIn extends Component {
             containerStyle={styles.containerStyle}
             value={this.state.phone}
             onChange={(phone) => this.setState({ phone })}
+            onEnterKeyPress={this.generateOTP}
           />
         </div>
         <p className="extra-info">
@@ -70,4 +80,4 @@ const styles = {
   },
 };
 
-export default SignIn;
+export default withRouter(SignIn);

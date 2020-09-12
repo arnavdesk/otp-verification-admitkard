@@ -17,8 +17,8 @@ class App extends Component {
     };
   }
 
-  setNotificationUpdate = (otp) => {
-    this.setState({ otp: otp, raiseNoty: true });
+  setNotificationUpdate = (otp, mobileNumber) => {
+    this.setState({ otp: otp, raiseNoty: true, mobileNumber: mobileNumber });
   };
 
   componentDidUpdate = () => {
@@ -38,7 +38,7 @@ class App extends Component {
             <SignIn
               {...props}
               otp={this.state.otp}
-              mobileNumber={this.state.mobileNumber}
+              phone={this.state.mobileNumber}
               setNotificationUpdate={this.setNotificationUpdate}
             />
           )}
@@ -49,7 +49,7 @@ class App extends Component {
             <OtpScreen
               {...props}
               otp={this.state.otp}
-              mobileNumber={this.state.mobileNumber}
+              phone={this.state.mobileNumber}
               setNotificationUpdate={this.setNotificationUpdate}
             />
           )}

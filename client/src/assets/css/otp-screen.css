@@ -47,6 +47,8 @@
 
   color: #f7b348;
   border-bottom: 1px solid #f7b348;
+
+  cursor: pointer;
 }
 
 .resend-link {
@@ -64,6 +66,7 @@
 
 .resend-link a {
   color: #f7b348;
+  cursor: pointer;
 }
 
 .submit-button {

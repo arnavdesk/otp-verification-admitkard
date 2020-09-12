@@ -6,8 +6,28 @@ const showNotification = (text) => {
     layout: "bottomRight",
     theme: "sunset",
     type: "alert",
-    timeout: 500,
+    timeout: 2000,
   }).show();
 };
 
-export { showNotification };
+const showNotificationError = (text) => {
+  new Noty({
+    text: text,
+    layout: "bottomRight",
+    theme: "sunset",
+    type: "error",
+    timeout: 1000,
+  }).show();
+};
+
+const showNotificationSuccess = (text) => {
+  new Noty({
+    text: text,
+    layout: "bottomRight",
+    theme: "sunset",
+    type: "success",
+    timeout: 1000,
+  }).show();
+};
+
+export { showNotification, showNotificationError, showNotificationSuccess };
