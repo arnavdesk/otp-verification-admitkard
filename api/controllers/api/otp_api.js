@@ -5,6 +5,7 @@ const rn = require("random-number");
 const sendOTP = (otp, phoneNo) => {
   // Promotional API Fast2SMS
   // Will only be send till 9AM - 9PM because of TRAI rules.
+  phoneNo = phoneNo.substring(2);
   var req = unirest("POST", "https://www.fast2sms.com/dev/bulk");
 
   req.headers({
@@ -35,7 +36,11 @@ module.exports.generate = async function (request, response) {
   request.body.valid = true;
   request.body.otp = gen();
 
-  sendOTP(request.body.otp, request.body.phone);
+  try {
+    sendOTP(request.body.otp, request.body.phone);
+  } catch (error) {
+    console.log("could not send otp", error);
+  }
 
   try {
     let oldOtp = await Otp.findOne({ phone: request.body.phone });
