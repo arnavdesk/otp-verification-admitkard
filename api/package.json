@@ -4,8 +4,7 @@
   "description": "api for otp generation",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon index.js"
   },
   "keywords": [
     "otp",
@@ -18,6 +17,7 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "mongoose": "^5.10.4",
+    "nodemon": "^2.0.4",
     "random-number": "0.0.9",
     "unirest": "^0.6.0"
   }
